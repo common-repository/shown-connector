@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<description>Apply WordPress Coding Standards to Shown Connector plugin</description>
+
+	<!--
+	#############################################################################
+	COMMAND LINE ARGUMENTS
+	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset
+	#############################################################################
+	-->
+
+	<!-- Only scan PHP files. -->
+	<arg name="extensions" value="php"/>
+	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="cache" value=".phpcs.cache"/>
+	<!-- Set the memory limit to 512M. -->
+	<ini name="memory_limit" value="512M"/>
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20"/>
+	<!-- Show sniff codes in all reports. -->
+	<arg value="ps"/>
+
+	<!--
+	#############################################################################
+	FILE SELECTION
+	Set which files will be subject to the scans executed using this ruleset.
+	#############################################################################
+	-->
+	<file>.</file>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<!--
+		#############################################################################
+		SET UP THE RULESET
+		#############################################################################
+		-->
+
+	<rule ref="WordPress">
+		<!-- PSR4 -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+	</rule>
+
+	<!-- Run against the PHPCompatibility ruleset -->
+	<rule ref="PHPCompatibility"/>
+
+	<rule ref="Generic.Commenting.DocComment.MissingShort">
+		<exclude-pattern>shown-connector.php</exclude-pattern>
+	</rule>
+
+	<!-- Check for cross-version support for PHP 5.6 and higher. -->
+	<config name="testVersion" value="7.4-"/>
+</ruleset>

@@ -1,0 +1,56 @@
+#shown-connector .nav-tab-active{
+	background-color: #fff;
+}
+#shown-connector .shown-tab-connect {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-top: 0;
+	padding: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+#shown-connector .shown-tab-connect p {
+	font-size: 1.1em;
+}
+
+/* Additional styling for 'Connect' button */
+#connect-button {
+	display: inline-block;
+	text-decoration: none;
+	margin-top: 20px;
+}
+
+/* Setting progress tab */
+#shown-connector .settings-section {
+	background-color: #fff;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#shown-connector fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+#shown-connector label {
+	display: block;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+#shown-connector input[type="checkbox"] {
+	margin-right: 10px;
+}
+#shown-tab-tracking .notice-success{
+	padding: 0 10px;
+	border: solid #deb;
+	font-size: 1.1em;
+}
+
+.button-shown-disconnect{
+	background-color: #d54e21 !important;
+	color: #ffffff !important;
+	border-color: #d54e21 !important;
+}

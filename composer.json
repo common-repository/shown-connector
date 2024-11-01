@@ -1,0 +1,44 @@
+{
+  "name": "shown/wordpress-connector",
+  "authors": [
+    {
+      "name": "Renato",
+      "email": "renato@shown.io"
+    },
+    {
+      "name": "Rachid",
+      "email": "rachid@shown.io"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "scripts": {
+    "php-cs-check": "phpcs --standard=phpcs.xml",
+    "php-cs-fix": "phpcbf --standard=phpcs.xml"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-comvendor/bin/phpcs -iposer-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.0",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "phpunit/phpunit": "^9",
+    "yoast/phpunit-polyfills": "^2.0",
+    "squizlabs/php_codesniffer": "^3.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Shown\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}
